@@ -3,6 +3,10 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Optional;
 
 public class App {
@@ -40,6 +44,21 @@ public class App {
 
         server.setHandler(handler);
         server.start();
+
+//        Connection conn = DataBaseConn.make();
+//        String sql = "select count(*) from users";
+//        PreparedStatement stmt = conn.prepareStatement(sql);
+//        ResultSet rs = stmt.executeQuery();
+//
+//        while (rs.next()) {
+//            int dataBaseSize = rs.getInt(1);
+//            System.out.println("Total number of books in the table : " + dataBaseSize);
+//        }
+
+
         server.join();
+
+
+
     }
 }

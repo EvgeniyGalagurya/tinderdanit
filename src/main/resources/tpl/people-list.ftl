@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="static-content/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!--{id} Custom styles for this template -->
     <link rel="stylesheet" href="static-content/css/style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
                         <table class="table-users table" border="0">
                             <tbody>
                             <#list items as line>
-                                <tr>
+                                <tr onclick="location.href='/messages/{id}?id=${line.getId()}'">
                                     <td width="10">
                                         <div class="avatar-img">
                                             <img class="img-circle" src="${line.getLink()}" />
@@ -44,14 +44,14 @@
                                     <td  class="align-middle">
                                         Last Login:  6/10/2017<br><small class="text-muted">5 days ago</small>
                                     </td>
-                                    <td class="align-middle">
+                                    <!-- <td class="align-middle">
                                         <div class="avatar-img">
-                                            <form action="/messages/{id}" formmethod="GET">
-                                                <label><input type="radio" name="id" value="${line.getId()}" checked ></label><br>
-                                                <button type="submit" class="btn btn-outline-success btn-block"><span class=""></span> Chat</button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                            <form action="/messages/{id}" formmethod="GET">-->
+                                                <!--<label hidden><input type="radio" name="id" value="${line.getId()}" checked ></label><br>-->
+                                                <!--<button type="submit" class="btn btn-outline-success btn-block"><span class=""></span> Chat</button>-->
+                                        <!--</form>-->
+                                    <!--</div>-->
+                                <!--</td>-->
                                 </tr>
                             </#list>
                             </tbody>
