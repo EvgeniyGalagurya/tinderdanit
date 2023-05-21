@@ -14,11 +14,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.stream.IntStream;
 
 public class LikePageApp extends HttpServlet {
   int id = 0;
   int i = 0;
+  int d = 0;
+  int l = 0;
   public int getId() throws Exception {
     id = id + 1;
     if (id > Users.mapUsers.quantity()) {
@@ -26,24 +27,15 @@ public class LikePageApp extends HttpServlet {
     }
     return id;
   }
-  int k = 0;
-  public int getDislikeClick() throws Exception {
-    k = k + 1;
-//    if (k > Users.mapUsers.quantity() + 1) {
-//      k = 1;
-//    }
-    return k;
-  }
-  int l = 0;
-  public int getLikeClick() throws Exception {
-    l = l + 1;
-//    if (k > Users.mapUsers.quantity() + 1) {
-//      k = 1;
-//    }
-    return l;
-  }
-  ArrayList<Integer> peopleLikeId = new ArrayList<>();
 
+  public void getDislikeClick() throws Exception {
+    d = d + 1;
+  }
+
+  public void getLikeClick() throws Exception {
+    l = l + 1;
+  }
+  static ArrayList<Integer> peopleLikeId = new ArrayList<>();
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,20 +50,16 @@ public class LikePageApp extends HttpServlet {
       throw new RuntimeException(e);
     }
 
-    HashMap<String, Object> data = new HashMap<>();
-
     try {
       getDislikeClick();
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
+    HashMap<String, Object> data = new HashMap<>();
     try {
-      if (k-1 >= Users.mapUsers.quantity()){
+      if (d-1 >= Users.mapUsers.quantity()){
         String uri = ResourcesOps.dirUnsafe("tpl/people-list_null.ftl");
-
         Path fileWithFullPath = Paths.get(uri);
-
         try (PrintWriter w = resp.getWriter()) {
           Files
                   .readAllLines(fileWithFullPath)
@@ -83,15 +71,9 @@ public class LikePageApp extends HttpServlet {
     }
 
     try {
-      if (l + k - 1 >= Users.mapUsers.quantity()) { //нужно перепроверить
-//        Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
-//        cfg.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
-//        cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("tpl")));
-//        System.out.println(peopleLikeId);
-
+      if (l + d - 1 >= Users.mapUsers.quantity()) {
         HashMap<String, Object> data2 = new HashMap<>();
         ArrayList<Users> items = new ArrayList<>();
-
         for (int i = 0; i < peopleLikeId.size(); i++) {
           try {
             items.add(new Users(Users.mapUsersLiked.load(peopleLikeId.get(i)).id(), Users.mapUsersLiked.load((Integer) peopleLikeId.get(i)).name(), Users.mapUsersLiked.load((Integer) peopleLikeId.get(i)).link()));
@@ -107,13 +89,9 @@ public class LikePageApp extends HttpServlet {
           throw new RuntimeException(x);
         }
       }
-
-
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
-
 
     try {
       getId();
@@ -132,7 +110,6 @@ public class LikePageApp extends HttpServlet {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
     data.put("name", userName);
     data.put("linkpage", userLink);
 
@@ -147,7 +124,6 @@ public class LikePageApp extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
     try {
       getLikeClick();
@@ -164,11 +140,10 @@ public class LikePageApp extends HttpServlet {
     }
 
     try {
-      if (l + k - 1 >= Users.mapUsers.quantity()) { //нужно перепроверить
+      if (l + d - 1 >= Users.mapUsers.quantity()) {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         cfg.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
         cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("tpl")));
-        System.out.println(peopleLikeId);
 
         HashMap<String, Object> data = new HashMap<>();
         ArrayList<Users> items = new ArrayList<>();
@@ -188,12 +163,10 @@ public class LikePageApp extends HttpServlet {
             throw new RuntimeException(x);
           }
         }
-
-
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-    Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
+        Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         cfg.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
         cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("tpl")));
 
@@ -229,7 +202,5 @@ public class LikePageApp extends HttpServlet {
             } catch (TemplateException x) {
               throw new RuntimeException(x);
             }
-
-
-          }
-        }
+  }
+}

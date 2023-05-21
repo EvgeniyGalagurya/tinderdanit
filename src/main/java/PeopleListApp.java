@@ -28,10 +28,7 @@ public class PeopleListApp extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-
       HashMap<String, Object> data = new HashMap<>();
-
-
       ArrayList<Users> items = new ArrayList<>();
 
         try {
@@ -47,7 +44,6 @@ public class PeopleListApp extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-
         try (PrintWriter w = resp.getWriter()) {
         cfg
                 .getTemplate("people-list.ftl")
@@ -56,6 +52,4 @@ public class PeopleListApp extends HttpServlet {
         throw new RuntimeException(x);
       }
     }
-
-
 }

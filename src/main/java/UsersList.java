@@ -8,15 +8,12 @@ public class UsersList {
     this.name = name;
     this.link = link;
   }
-
   public Integer getId() {
     return id;
   }
-
   public String getName() {
     return name;
   }
-
   public String getLink() {
     return link;
   }

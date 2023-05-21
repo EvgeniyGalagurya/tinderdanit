@@ -4,7 +4,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import java.net.InetSocketAddress;
 
-public class Main {
+public class App {
 
     public static void main(String[] args) throws Exception {
 //        String port = System.getenv().get("PORT");
@@ -18,14 +18,11 @@ public class Main {
 
         ServletContextHandler handler = new ServletContextHandler();
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
-
         String osStaticLocation = ResourcesOps.dirUnsafe("static-content");
         handler.addServlet(new ServletHolder(new StaticContentServlet(osStaticLocation)), "/static-content/*");
-
         handler.addServlet(new ServletHolder(new TestServlet()), "/test");
+
         handler.addServlet(new ServletHolder(new UsersPageServlet()), "/users");
-
-
         handler.addServlet(new ServletHolder(new ChatPageApp()), "/chat");
         handler.addServlet(new ServletHolder(new LoginFormApp()), "/login");
         handler.addServlet(new ServletHolder(new LikePageApp()), "/liked");

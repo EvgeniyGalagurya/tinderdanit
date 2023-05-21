@@ -9,7 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class LoginFormApp extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = ResourcesOps.dirUnsafe("tpl/login.ftl");

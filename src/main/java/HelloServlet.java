@@ -14,12 +14,10 @@ public class HelloServlet extends HttpServlet {
     this.helloMessage = helloMessage;
     System.out.println("Servlet is starting...");
   }
-
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     try (Writer w = resp.getWriter()) {
       w.write(helloMessage);
     }
   }
-
 }

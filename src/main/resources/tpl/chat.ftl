@@ -24,7 +24,7 @@
                 <div class="row header-one text-white p-1">
                     <div class="col-md-6 name pl-2">
                         <i class="fa fa-comment"></i>
-                        <h6 class="ml-1 mb-0">${line.getName()}</h6>
+                        <h6 class="ml-1 mb-0">${name}</h6>
                     </div>
                     <div class="col-md-6 options text-right pr-0">
                         <i class="fa fa-window-minimize hide-chat-box hover text-center pt-1"></i>
@@ -54,14 +54,14 @@
                         </li>
                         <li class="receive-msg float-left mb-2">
                             <div class="sender-img">
-                                <img src="${line.getLink()}" class="float-left">
+                                <img src="${linkpage}" class="float-left">
                             </div>
                             <div class="receive-msg-desc float-left ml-2">
                                 <p class="bg-white m-0 pt-1 pb-1 pl-2 pr-2 rounded">
                                     hii <br>
                                     How are you ?<br>
                                 </p>
-                                <span class="receive-msg-time">${line.getName()}, Jan 25, 6:20 PM</span>
+                                <span class="receive-msg-time">${name}, Jan 25, 6:20 PM</span>
                             </div>
                         </li>
                         <li class="send-msg float-right mb-2">
@@ -72,7 +72,7 @@
                         </li>
                         <li class="receive-msg float-left mb-2">
                             <div class="sender-img">
-                                <img src="${line.getLink()}" class="float-left">
+                                <img src="${linkpage}" class="float-left">
                             </div>
                             <div class="receive-msg-desc float-left ml-2">
                                 <p class="bg-white m-0 pt-1 pb-1 pl-2 pr-2 rounded">
