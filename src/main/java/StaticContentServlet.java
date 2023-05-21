@@ -8,13 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class StaticContentServlet extends HttpServlet {
-
   private final String osStaticLocation;
-
   public StaticContentServlet(String osStaticLocation) {
     this.osStaticLocation = osStaticLocation;
   }
-
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     String pathInfo = req.getPathInfo();

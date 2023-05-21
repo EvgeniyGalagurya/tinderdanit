@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LikePageApp extends HttpServlet {
+public class LikePageServlet extends HttpServlet {
   int id = 0;
   int i = 0;
   int d = 0;

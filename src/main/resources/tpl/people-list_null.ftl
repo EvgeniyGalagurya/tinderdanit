@@ -26,11 +26,11 @@
                     <h3 class="mb-0 text-truncated">You have not liked anyone</h3>
                     <br>
                 </div>
-                <div class="col-12 col-lg-6">
+                <!--<div class="col-12 col-lg-6">
                     <form action="/users" method="GET">
                         <button type="submit" class="btn btn-outline-success btn-block"><span class=""></span> Try again!</button>
                     </form>
-                </div>
+                </div>-->
 
                 <!--/col-->
             </div>

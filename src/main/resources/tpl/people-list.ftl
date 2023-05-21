@@ -46,10 +46,9 @@
                                     </td>
                                     <td class="align-middle">
                                         <div class="avatar-img">
-                                            <form action="/chat" formmethod="GET">
+                                            <form action="/messages/{id}" formmethod="GET">
                                                 <label><input type="radio" name="id" value="${line.getId()}" checked ></label><br>
                                                 <button type="submit" class="btn btn-outline-success btn-block"><span class=""></span> Chat</button>
-                                                <!--  <button style="display: none" id="${line.getId()}" value="${line.getId()}" name="userId" class="btn_submit" form="form_like" type="submit"  >Chat</button>-->
                                             </form>
                                         </div>
                                     </td>

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.IntStream;
 
-public class PeopleListApp extends HttpServlet {
+public class PeopleListServlet extends HttpServlet {
 
     private int i;
     @Override
