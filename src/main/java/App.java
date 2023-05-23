@@ -44,18 +44,6 @@ public class App {
 
         server.setHandler(handler);
         server.start();
-
-//        Connection conn = DataBaseConn.make();
-//        String sql = "select count(*) from users";
-//        PreparedStatement stmt = conn.prepareStatement(sql);
-//        ResultSet rs = stmt.executeQuery();
-//
-//        while (rs.next()) {
-//            int dataBaseSize = rs.getInt(1);
-//            System.out.println("Total number of books in the table : " + dataBaseSize);
-//        }
-
-
         server.join();
 
 
