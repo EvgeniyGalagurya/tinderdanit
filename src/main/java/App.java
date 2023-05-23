@@ -24,11 +24,13 @@ public class App {
 //        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
 //        Server server = new Server(inetSocketAddress);
 
-        Integer port = Optional.ofNullable(System.getenv("PORT"))
-                .flatMap(App::toInt)
-                .orElse(8080);
+//        Integer port = Optional.ofNullable(System.getenv("PORT"))
+//                .flatMap(App::toInt)
+//                .orElse(8080);
+//
+//        Server server = new Server(port);
 
-        Server server = new Server(port);
+        Server server = new Server(HerokuEnv.port());
 
         ServletContextHandler handler = new ServletContextHandler();
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
@@ -44,18 +46,6 @@ public class App {
 
         server.setHandler(handler);
         server.start();
-
-//        Connection conn = DataBaseConn.make();
-//        String sql = "select count(*) from users";
-//        PreparedStatement stmt = conn.prepareStatement(sql);
-//        ResultSet rs = stmt.executeQuery();
-//
-//        while (rs.next()) {
-//            int dataBaseSize = rs.getInt(1);
-//            System.out.println("Total number of books in the table : " + dataBaseSize);
-//        }
-
-
         server.join();
 
 
