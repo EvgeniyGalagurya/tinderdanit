@@ -14,9 +14,9 @@ public class DataBaseConn {
 // Heroku db
   public static Connection make() throws SQLException {
     return DriverManager.getConnection(
-            "jdbc:postgresql://ec2-54-195-24-35.eu-west-1.compute.amazonaws.com:5432/dcif62h0akno24",
-            "yanheoibydneaa",
-            "fe8abe73cf010efffa1355864a889123cb7252c4876c9fa881ca6f9b400ab689"
+            "jdbc:postgresql://ec2-52-215-209-64.eu-west-1.compute.amazonaws.com:5432/d3fh8e2r21bk9k",
+            "ceivqgqmbrerxy",
+            "7d2824755478094e3f156bc3b9b992b8461baf1162788b147b391ef16eabb22d"
     );
   }
 
