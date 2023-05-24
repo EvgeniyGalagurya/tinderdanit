@@ -66,11 +66,13 @@
             <version>2.3.32</version>
         </dependency>
         <!--        if you use postgres -->
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
-            <groupId>org.postgreSql</groupId>
+            <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
+
         <!--        if you use MySql -->
         <dependency>
             <groupId>com.mysql</groupId>
