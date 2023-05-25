@@ -1,6 +1,8 @@
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+
+import java.net.InetSocketAddress;
 import java.util.Optional;
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
@@ -21,7 +23,7 @@ public class App {
 //        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
 //        Server server = new Server(inetSocketAddress);
 //
-        System.out.println(System.getenv("PORT"));
+
 //
 //        Integer port = Optional.ofNullable(System.getenv("PORT"))
 //                .flatMap(App::toInt)
