@@ -4,7 +4,7 @@ public class HerokuEnv {
         try {
             return Integer.parseInt(System.getenv("PORT"));
         } catch (NumberFormatException ex) {
-            return 5000;
+            return 3000;
         }
     }
 
