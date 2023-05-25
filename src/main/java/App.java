@@ -4,10 +4,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import java.net.InetSocketAddress;
 import java.util.Optional;
-import javax.servlet.DispatcherType;
-import javax.servlet.Filter;
-import javax.servlet.MultipartConfigElement;
-
 public class App {
 
     static Optional<Integer> toInt(String raw) {
@@ -20,8 +16,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-//        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
-//        Server server = new Server(inetSocketAddress);
+        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
+        Server server = new Server(inetSocketAddress);
 //
 
 //
@@ -31,7 +27,7 @@ public class App {
 //
 //        Server server = new Server(port);
 
-        Server server = new Server(HerokuEnv.port());
+//        Server server = new Server(HerokuEnv.port());
 
         ServletContextHandler handler = new ServletContextHandler();
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
