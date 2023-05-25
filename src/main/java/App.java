@@ -21,6 +21,8 @@ public class App {
 //        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
 //        Server server = new Server(inetSocketAddress);
 //
+        System.out.println(System.getenv("PORT"));
+//
 //        Integer port = Optional.ofNullable(System.getenv("PORT"))
 //                .flatMap(App::toInt)
 //                .orElse(8080);
