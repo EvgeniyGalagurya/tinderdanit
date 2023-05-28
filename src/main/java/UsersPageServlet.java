@@ -17,7 +17,7 @@ public class UsersPageServlet extends HttpServlet {
 
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         cfg.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
-        cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("tpl")));
+        cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("resources.tpl")));
         HashMap<String, Object> data = new HashMap<>();
         try {
             Users.usersList();
