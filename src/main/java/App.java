@@ -30,13 +30,14 @@ public class App {
         Server server = new Server(HerokuEnv.port());
 
         ServletContextHandler handler = new ServletContextHandler();
+        handler.addServlet(new ServletHolder(new UsersPageServlet()), "/users")
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
         String osStaticLocation = ResourcesOps.dirUnsafe("static-content");
         handler.addServlet(new ServletHolder(new StaticContentServlet(osStaticLocation)), "/static-content/*");
         handler.addServlet(new ServletHolder(new TestServlet()), "/test");
         handler.addServlet(new ServletHolder(new PeopleListServlet()), "/people");
 
-        handler.addServlet(new ServletHolder(new UsersPageServlet()), "/users");
+//        handler.addServlet(new ServletHolder(new UsersPageServlet()), "/users");
         handler.addServlet(new ServletHolder(new ChatPageServlet()), "/messages/{id}");
         handler.addServlet(new ServletHolder(new LoginFormServlet()), "/login");
         handler.addServlet(new ServletHolder(new LikePageServlet()), "/liked");
