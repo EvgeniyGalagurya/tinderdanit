@@ -2,7 +2,6 @@ import java.net.URISyntaxException;
 import java.util.Objects;
 
 public class ResourcesOps {
-
 //    public static String dirUnsafe(String dir) {
 //        try {
 //

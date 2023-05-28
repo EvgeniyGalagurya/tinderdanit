@@ -7,7 +7,6 @@ public class HerokuEnv {
             return 5000;
         }
     }
-
 //    public static String jdbc_url() {
 //        String url = System.getenv("JDBC_DATABASE_URL");
 //        if (url == null) throw new IllegalArgumentException("JDBC_DATABASE_URL is empty!!!");
