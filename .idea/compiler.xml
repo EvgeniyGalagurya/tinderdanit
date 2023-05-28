@@ -15,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-webHome" target="1.5" />
+      <module name="steprojecttinder" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

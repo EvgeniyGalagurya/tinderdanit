@@ -16,8 +16,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
-        Server server = new Server(inetSocketAddress);
+//        InetSocketAddress inetSocketAddress = new InetSocketAddress("192.168.1.107", 24);
+//        Server server = new Server(inetSocketAddress);
 //
 
 //
@@ -27,7 +27,7 @@ public class App {
 //
 //        Server server = new Server(port);
 
-//        Server server = new Server(HerokuEnv.port());
+        Server server = new Server(HerokuEnv.port());
 
         ServletContextHandler handler = new ServletContextHandler();
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
