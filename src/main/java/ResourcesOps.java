@@ -20,9 +20,9 @@ public class ResourcesOps {
 //    }
     public static String dirUnsafe(String dir) {
         try {
-            return Objects.requireNonNull(ResourcesOps.class
-                            .getClassLoader()
-                            .getResource(dir))
+            return ResourcesOps.class
+                    .getClassLoader()
+                    .getResource(dir)
                     .toURI()
                     .getPath();
         } catch (URISyntaxException e) {
