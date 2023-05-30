@@ -21,13 +21,13 @@ public class App {
 //
 
 
-        Integer port = Optional.ofNullable(System.getenv("PORT"))
-                .flatMap(App::toInt)
-                .orElse(8080);
+//        Integer port = Optional.ofNullable(System.getenv("PORT"))
+//                .flatMap(App::toInt)
+//                .orElse(8080);
+//
+//        Server server = new Server(port);
 
-        Server server = new Server(port);
-
-//        Server server = new Server(HerokuEnv.port());
+        Server server = new Server(HerokuEnv.port());
 
         ServletContextHandler handler = new ServletContextHandler();
 
