@@ -2,6 +2,8 @@ import java.net.URISyntaxException;
 import java.util.Objects;
 
 public class ResourcesOps {
+
+    // local version
 //    public static String dirUnsafe(String dir) {
 //        try {
 //
@@ -18,16 +20,22 @@ public class ResourcesOps {
 //            throw new RuntimeException(String.format("Requested path `%s`not found", dir), e);
 //        }
 //    }
+    // heroku version
+//    public static String dirUnsafe(String dir) {
+//        try {
+//            return ResourcesOps.class
+//                    .getClassLoader()
+//                    .getResource(dir)
+//                    .toURI()
+//                    .getPath();
+//        } catch (URISyntaxException e) {
+//            throw new RuntimeException(String.format("Requested path `%s`not found", dir), e);
+//        }
+//    }
+
     public static String dirUnsafe(String dir) {
-        try {
-            return ResourcesOps.class
-                    .getClassLoader()
-                    .getResource(dir)
-                    .toURI()
-                    .getPath();
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(String.format("Requested path `%s`not found", dir), e);
-        }
+        String resource = "target/classes/";
+        return resource + dir;
     }
 
 }

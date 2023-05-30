@@ -24,7 +24,7 @@
                 <version>2.1.17.RELEASE</version>
                 <configuration>
                     <mainClass>App</mainClass>
-                    <layout>ZIP</layout>
+                    <layout>JAR</layout>
                 </configuration>
                 <executions>
                     <execution>

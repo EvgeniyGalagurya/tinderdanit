@@ -20,7 +20,7 @@ public class App {
 //        Server server = new Server(inetSocketAddress);
 //
 
-//
+
 //        Integer port = Optional.ofNullable(System.getenv("PORT"))
 //                .flatMap(App::toInt)
 //                .orElse(8080);
@@ -34,6 +34,8 @@ public class App {
         handler.addServlet(new ServletHolder(new HelloServlet("Hello World")), "/");
         String osStaticLocation = ResourcesOps.dirUnsafe("static-content");
         handler.addServlet(new ServletHolder(new StaticContentServlet(osStaticLocation)), "/static-content/*");
+
+
         handler.addServlet(new ServletHolder(new TestServlet()), "/test");
         handler.addServlet(new ServletHolder(new PeopleListServlet()), "/people");
 

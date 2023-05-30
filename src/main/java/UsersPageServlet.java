@@ -12,12 +12,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 public class UsersPageServlet extends HttpServlet {
     int i = 0;
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         cfg.setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));
-        cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("srs/main/tpl")));
+        cfg.setDirectoryForTemplateLoading(new File(ResourcesOps.dirUnsafe("tpl")));
 
 
         HashMap<String, Object> data = new HashMap<>();
