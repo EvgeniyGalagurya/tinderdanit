@@ -20,18 +20,9 @@ public class ResourcesOps {
 //            throw new RuntimeException(String.format("Requested path `%s`not found", dir), e);
 //        }
 //    }
-    // heroku version
-//    public static String dirUnsafe(String dir) {
-//        try {
-//            return ResourcesOps.class
-//                    .getClassLoader()
-//                    .getResource(dir)
-//                    .toURI()
-//                    .getPath();
-//        } catch (URISyntaxException e) {
-//            throw new RuntimeException(String.format("Requested path `%s`not found", dir), e);
-//        }
-//    }
+//
+//
+//    jar version
 
     public static String dirUnsafe(String dir) {
         String resource = "target/classes/";
